@@ -164,14 +164,18 @@ module.exports = (app, { getRouter }) => {
       'tag-prefix': tagPrefix,
     } = config
 
-    // override header and footer when passed as input
+    // overrides passed as input
     const header = core.getInput('header')
     const footer = core.getInput('footer')
+    const includePaths = core.getInput('include-paths')
     if (header) {
       config['header'] = header
     }
     if (footer) {
       config['footer'] = footer
+    }
+    if (includePaths) {
+      config['include-paths'] = includePaths
     }
 
     const { draftRelease, lastRelease } = await findReleases({
