@@ -142456,6 +142456,7 @@ function getInput() {
         : undefined,
     preReleaseIdentifier: core.getInput('prerelease-identifier') || undefined,
     latest: core.getInput('latest')?.toLowerCase() || undefined,
+    includePaths: core.getInput('include-paths') || undefined,
   }
 }
 
