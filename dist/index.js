@@ -142568,7 +142568,7 @@ const findCommitsWithAssociatedPullRequestsQuery = /* GraphQL */ `
     repository(name: $name, owner: $owner) {
       object(expression: $targetCommitish) {
         ... on Commit {
-          history(first: 100, since: $since, after: $after) {
+          history(first: 10, since: $since, after: $after) {
             totalCount
             pageInfo {
               hasNextPage
@@ -142598,7 +142598,7 @@ const findCommitsWithAssociatedPullRequestsQuery = /* GraphQL */ `
                   }
                   mergedAt
                   isCrossRepository
-                  labels(first: 100) {
+                  labels(first: 10) {
                     nodes {
                       name
                     }
